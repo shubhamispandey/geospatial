@@ -48,7 +48,7 @@ function MarkersLayerInner() {
       const rgb = activityTypeAndConfidenceToRgb(p.activityType, p.confidence)
       const color = rgbToCesiumColor(rgb, 0.95)
       const isSelected = p.id === selectedId
-      const point = collection.add({
+      collection.add({
         position,
         color: new Cesium.Color(color.red, color.green, color.blue, color.alpha),
         pixelSize: isSelected ? SELECTED_PIXEL_SIZE : PIXEL_SIZE,
